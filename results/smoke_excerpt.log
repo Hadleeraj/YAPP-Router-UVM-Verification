@@ -1,0 +1,58 @@
+Measured smoke run excerpt, 2026-09-09. Full run had 30 matched packets.
+
+[2026-09-09 22:56:09 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-access' '+rw' -uvmnocdnsextra -uvmhome $UVM_HOME $UVM_HOME/src/uvm_macros.svh design.sv testbench.sv  
+
+UVM_INFO router_scoreboard.sv(164) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] Checking Router Scoreboard
+UVM_INFO router_scoreboard.sv(169) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] UVM Scoreboard empty! 
+
+UVM_INFO testbench.sv(102) @ 69250: uvm_test_top [SMOKE_COUNTS] 30 input packets matched: 10 per output channel; queues empty
+UVM_INFO channel_rx_driver.sv(97) @ 69250: uvm_test_top.tb.channel0.rx_agent.driver [channel_rx_driver] Report: Channel_0 RX Driver Sent 10 Responses
+UVM_INFO channel_rx_monitor.sv(157) @ 69250: uvm_test_top.tb.channel0.rx_agent.monitor [channel_rx_monitor] Report: Channel_0 Monitor Collected 10 Packets
+UVM_INFO channel_rx_driver.sv(97) @ 69250: uvm_test_top.tb.channel1.rx_agent.driver [channel_rx_driver] Report: Channel_1 RX Driver Sent 10 Responses
+UVM_INFO channel_rx_monitor.sv(157) @ 69250: uvm_test_top.tb.channel1.rx_agent.monitor [channel_rx_monitor] Report: Channel_1 Monitor Collected 10 Packets
+UVM_INFO channel_rx_driver.sv(97) @ 69250: uvm_test_top.tb.channel2.rx_agent.driver [channel_rx_driver] Report: Channel_2 RX Driver Sent 10 Responses
+UVM_INFO channel_rx_monitor.sv(157) @ 69250: uvm_test_top.tb.channel2.rx_agent.monitor [channel_rx_monitor] Report: Channel_2 Monitor Collected 10 Packets
+UVM_INFO hbus_monitor.sv(132) @ 69250: uvm_test_top.tb.hbus.monitor [hbus_monitor] Report: HBUS Monitor Collected 2 WRITE and 0 READ Transactions
+UVM_INFO router_scoreboard.sv(173) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] ===== Router Scoreboard Report =====
+UVM_INFO router_scoreboard.sv(174) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] Packets received from YAPP monitor : 30
+UVM_INFO router_scoreboard.sv(175) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] Packets dropped (bad address)      : 0
+UVM_INFO router_scoreboard.sv(178) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] Channel 0 -> received:10 matched:10 miscompared:0 unexpected:0
+UVM_INFO router_scoreboard.sv(180) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] Channel 1 -> received:10 matched:10 miscompared:0 unexpected:0
+UVM_INFO router_scoreboard.sv(182) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] Channel 2 -> received:10 matched:10 miscompared:0 unexpected:0
+UVM_INFO router_scoreboard.sv(190) @ 69250: uvm_test_top.tb.router_sb [router_scoreboard] TEST PASSED: all packets matched, no drops
+UVM_INFO yapp_tx_driver.sv(65) @ 69250: uvm_test_top.tb.yapp.agent.driver [yapp_tx_driver] Report: YAPP TX driver sent 30 packets
+UVM_INFO yapp_tx_monitor.sv(49) @ 69250: uvm_test_top.tb.yapp.agent.monitor [yapp_tx_monitor] Report: YAPP Monitor Collected 30 Packets
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(851) @ 69250: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  147
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[HBUS_IF]     5
+[NOCOV]     3
+[RNTST]     1
+[SMOKE_COUNTS]     1
+[TEST_DONE]     1
+[UVM/CFG/GET/DPR]     1
+[UVM/RELNOTES]     1
+[channel_rx_driver]     6
+[channel_rx_monitor]    39
+[channel_rx_resp_seq]     3
+[clk10_rst5_seq]     1
+[clock_and_reset_sequence]     1
+[hbus_master_driver]     3
+[hbus_monitor]     7
+[hbus_set_default_regs_seq]     1
+[hbus_set_yapp_regs_seq]     1
+[router_scoreboard]    39
+[yapp_tx_driver]     2
+[yapp_tx_monitor]    32
+
+Simulation complete via $finish(1) at time 6925 NS + 60
+/xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+TOOL:	xrun	25.03-s001: Exiting on Sep 09, 2026 at 18:56:20 EDT  (total: 00:00:10)
+Done
