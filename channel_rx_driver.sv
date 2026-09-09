@@ -87,7 +87,8 @@ endclass : channel_rx_driver
       @(posedge vif.reset);
       vif.suspend      <= 1'b1;
       @(negedge vif.reset);
-      vif.suspend      <= 1'b0;
+      // Hold the output FIFO until the response sequence releases it.
+      vif.suspend      <= 1'b1;
     end
   endtask : reset_signals
 
